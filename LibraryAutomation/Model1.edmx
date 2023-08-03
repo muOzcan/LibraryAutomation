@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LibraryAutomationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_tc" Type="nvarchar" MaxLength="11" />
+          <Property Name="user_tel" Type="nvarchar" MaxLength="11" />
+          <Property Name="user_mail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="personal_id" />
+          </Key>
+          <Property Name="personal_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="persona_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="personal_surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="personal_tc" Type="nvarchar" MaxLength="11" />
+          <Property Name="personal_tel" Type="nvarchar" MaxLength="11" />
+          <Property Name="personal_mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="personal_username" Type="nvarchar" MaxLength="50" />
+          <Property Name="personal_password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="LibraryAutomationModelStoreContainer">
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibraryAutomationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="personal_id" />
+          </Key>
+          <Property Name="personal_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="persona_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="personal_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="personal_tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="personal_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="personal_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="personal_username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="personal_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="LibraryAutomationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Students" EntityType="LibraryAutomationModel.Students" />
+        </EntityContainer>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="user_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="user_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LibraryAutomationModelStoreContainer" CdmEntityContainer="LibraryAutomationEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LibraryAutomationModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="personal_id" ColumnName="personal_id" />
+                <ScalarProperty Name="persona_name" ColumnName="persona_name" />
+                <ScalarProperty Name="personal_surname" ColumnName="personal_surname" />
+                <ScalarProperty Name="personal_tc" ColumnName="personal_tc" />
+                <ScalarProperty Name="personal_tel" ColumnName="personal_tel" />
+                <ScalarProperty Name="personal_mail" ColumnName="personal_mail" />
+                <ScalarProperty Name="personal_username" ColumnName="personal_username" />
+                <ScalarProperty Name="personal_password" ColumnName="personal_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="LibraryAutomationModel.Students">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="user_mail" ColumnName="user_mail" />
+                <ScalarProperty Name="user_tel" ColumnName="user_tel" />
+                <ScalarProperty Name="user_tc" ColumnName="user_tc" />
+                <ScalarProperty Name="user_surname" ColumnName="user_surname" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
