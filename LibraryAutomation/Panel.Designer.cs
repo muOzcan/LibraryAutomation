@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.infoPanel = new System.Windows.Forms.Panel();
-            this.userButton = new System.Windows.Forms.Button();
-            this.addUserButton = new System.Windows.Forms.Button();
-            this.editUserButton = new System.Windows.Forms.Button();
             this.deleteUserButton = new System.Windows.Forms.Button();
+            this.editUserButton = new System.Windows.Forms.Button();
+            this.addUserButton = new System.Windows.Forms.Button();
+            this.userButton = new System.Windows.Forms.Button();
+            this.infoPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,14 +50,45 @@
             this.panel1.Size = new System.Drawing.Size(228, 450);
             this.panel1.TabIndex = 0;
             // 
-            // infoPanel
+            // deleteUserButton
             // 
-            this.infoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.infoPanel.Location = new System.Drawing.Point(228, 0);
-            this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(599, 41);
-            this.infoPanel.TabIndex = 1;
+            this.deleteUserButton.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.deleteUserButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.deleteUserButton.FlatAppearance.BorderSize = 0;
+            this.deleteUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteUserButton.Location = new System.Drawing.Point(0, 183);
+            this.deleteUserButton.Name = "deleteUserButton";
+            this.deleteUserButton.Size = new System.Drawing.Size(228, 62);
+            this.deleteUserButton.TabIndex = 3;
+            this.deleteUserButton.Text = "Delete User";
+            this.deleteUserButton.UseVisualStyleBackColor = false;
+            // 
+            // editUserButton
+            // 
+            this.editUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.editUserButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.editUserButton.FlatAppearance.BorderSize = 0;
+            this.editUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editUserButton.Location = new System.Drawing.Point(0, 121);
+            this.editUserButton.Name = "editUserButton";
+            this.editUserButton.Size = new System.Drawing.Size(228, 62);
+            this.editUserButton.TabIndex = 2;
+            this.editUserButton.Text = "Edit User";
+            this.editUserButton.UseVisualStyleBackColor = false;
+            // 
+            // addUserButton
+            // 
+            this.addUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.addUserButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addUserButton.FlatAppearance.BorderSize = 0;
+            this.addUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addUserButton.Location = new System.Drawing.Point(0, 61);
+            this.addUserButton.Name = "addUserButton";
+            this.addUserButton.Size = new System.Drawing.Size(228, 60);
+            this.addUserButton.TabIndex = 1;
+            this.addUserButton.Text = "Add User";
+            this.addUserButton.UseVisualStyleBackColor = false;
+            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
             // userButton
             // 
@@ -73,44 +104,14 @@
             this.userButton.UseVisualStyleBackColor = false;
             this.userButton.Click += new System.EventHandler(this.userButton_Click);
             // 
-            // addUserButton
+            // infoPanel
             // 
-            this.addUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.addUserButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.addUserButton.FlatAppearance.BorderSize = 0;
-            this.addUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addUserButton.Location = new System.Drawing.Point(0, 61);
-            this.addUserButton.Name = "addUserButton";
-            this.addUserButton.Size = new System.Drawing.Size(228, 60);
-            this.addUserButton.TabIndex = 1;
-            this.addUserButton.Text = "Add User";
-            this.addUserButton.UseVisualStyleBackColor = false;
-            // 
-            // editUserButton
-            // 
-            this.editUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.editUserButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.editUserButton.FlatAppearance.BorderSize = 0;
-            this.editUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editUserButton.Location = new System.Drawing.Point(0, 121);
-            this.editUserButton.Name = "editUserButton";
-            this.editUserButton.Size = new System.Drawing.Size(228, 62);
-            this.editUserButton.TabIndex = 2;
-            this.editUserButton.Text = "Edit User";
-            this.editUserButton.UseVisualStyleBackColor = false;
-            // 
-            // deleteUserButton
-            // 
-            this.deleteUserButton.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.deleteUserButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.deleteUserButton.FlatAppearance.BorderSize = 0;
-            this.deleteUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteUserButton.Location = new System.Drawing.Point(0, 183);
-            this.deleteUserButton.Name = "deleteUserButton";
-            this.deleteUserButton.Size = new System.Drawing.Size(228, 62);
-            this.deleteUserButton.TabIndex = 3;
-            this.deleteUserButton.Text = "Delete User";
-            this.deleteUserButton.UseVisualStyleBackColor = false;
+            this.infoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.infoPanel.Location = new System.Drawing.Point(228, 0);
+            this.infoPanel.Name = "infoPanel";
+            this.infoPanel.Size = new System.Drawing.Size(599, 41);
+            this.infoPanel.TabIndex = 1;
             // 
             // Panel
             // 

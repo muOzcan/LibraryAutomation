@@ -43,5 +43,12 @@ namespace LibraryAutomation
             userListForm.MdiParent = this;
             userListForm.Show();
         }
+
+        private void addUserButton_Click(object sender, EventArgs e)
+        {
+            UserAdd add = new UserAdd();
+            add.MdiParent = this;
+            add.Show();
+        }
     }
 }
