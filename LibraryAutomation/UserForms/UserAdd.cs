@@ -41,6 +41,7 @@ namespace LibraryAutomation
 
             db.Students.Add(student);
             db.SaveChanges();
+            List();
         }
     }
 }

@@ -84,29 +84,62 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceForms\ResourceAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceForms\ResourceAdd.Designer.cs">
+      <DependentUpon>ResourceAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceForms\ResourceDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceForms\ResourceDelete.Designer.cs">
+      <DependentUpon>ResourceDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceForms\ResourceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceForms\ResourceList.Designer.cs">
+      <DependentUpon>ResourceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceForms\ResourceUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceForms\ResourceUpdate.Designer.cs">
+      <DependentUpon>ResourceUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Students.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserAdd.cs">
+    <Compile Include="UserForms\UserAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAdd.Designer.cs">
+    <Compile Include="UserForms\UserAdd.Designer.cs">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserDelete.cs">
+    <Compile Include="UserForms\UserDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserDelete.Designer.cs">
+    <Compile Include="UserForms\UserDelete.Designer.cs">
       <DependentUpon>UserDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserList.cs">
+    <Compile Include="UserForms\UserList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserList.Designer.cs">
+    <Compile Include="UserForms\UserList.Designer.cs">
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\UserUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\UserUpdate.Designer.cs">
+      <DependentUpon>UserUpdate.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -123,14 +156,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserAdd.resx">
+    <EmbeddedResource Include="ResourceForms\ResourceAdd.resx">
+      <DependentUpon>ResourceAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceForms\ResourceDelete.resx">
+      <DependentUpon>ResourceDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceForms\ResourceList.resx">
+      <DependentUpon>ResourceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\UserAdd.resx">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserDelete.resx">
+    <EmbeddedResource Include="UserForms\UserDelete.resx">
       <DependentUpon>UserDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserList.resx">
+    <EmbeddedResource Include="UserForms\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\UserUpdate.resx">
+      <DependentUpon>UserUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -168,5 +213,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

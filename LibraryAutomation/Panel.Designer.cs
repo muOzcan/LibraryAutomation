@@ -34,12 +34,21 @@
             this.addUserButton = new System.Windows.Forms.Button();
             this.userButton = new System.Windows.Forms.Button();
             this.infoPanel = new System.Windows.Forms.Panel();
+            this.resourcesButton = new System.Windows.Forms.Button();
+            this.addResourcesButton = new System.Windows.Forms.Button();
+            this.editResourcesButton = new System.Windows.Forms.Button();
+            this.delResourcesButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.delResourcesButton);
+            this.panel1.Controls.Add(this.editResourcesButton);
+            this.panel1.Controls.Add(this.addResourcesButton);
+            this.panel1.Controls.Add(this.resourcesButton);
             this.panel1.Controls.Add(this.deleteUserButton);
             this.panel1.Controls.Add(this.editUserButton);
             this.panel1.Controls.Add(this.addUserButton);
@@ -47,7 +56,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 450);
+            this.panel1.Size = new System.Drawing.Size(228, 489);
             this.panel1.TabIndex = 0;
             // 
             // deleteUserButton
@@ -76,6 +85,7 @@
             this.editUserButton.TabIndex = 2;
             this.editUserButton.Text = "Edit User";
             this.editUserButton.UseVisualStyleBackColor = false;
+            this.editUserButton.Click += new System.EventHandler(this.editUserButton_Click);
             // 
             // addUserButton
             // 
@@ -111,14 +121,69 @@
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.infoPanel.Location = new System.Drawing.Point(228, 0);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(599, 41);
+            this.infoPanel.Size = new System.Drawing.Size(695, 41);
             this.infoPanel.TabIndex = 1;
+            // 
+            // resourcesButton
+            // 
+            this.resourcesButton.BackColor = System.Drawing.Color.LightCoral;
+            this.resourcesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.resourcesButton.FlatAppearance.BorderSize = 0;
+            this.resourcesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resourcesButton.Location = new System.Drawing.Point(0, 245);
+            this.resourcesButton.Name = "resourcesButton";
+            this.resourcesButton.Size = new System.Drawing.Size(228, 61);
+            this.resourcesButton.TabIndex = 4;
+            this.resourcesButton.Text = "Resources";
+            this.resourcesButton.UseVisualStyleBackColor = false;
+            this.resourcesButton.Click += new System.EventHandler(this.resourcesButton_Click);
+            // 
+            // addResourcesButton
+            // 
+            this.addResourcesButton.BackColor = System.Drawing.Color.Yellow;
+            this.addResourcesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.addResourcesButton.FlatAppearance.BorderSize = 0;
+            this.addResourcesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addResourcesButton.Location = new System.Drawing.Point(0, 306);
+            this.addResourcesButton.Name = "addResourcesButton";
+            this.addResourcesButton.Size = new System.Drawing.Size(228, 61);
+            this.addResourcesButton.TabIndex = 5;
+            this.addResourcesButton.Text = "Add Resources";
+            this.addResourcesButton.UseVisualStyleBackColor = false;
+            this.addResourcesButton.Click += new System.EventHandler(this.addResourcesButton_Click);
+            // 
+            // editResourcesButton
+            // 
+            this.editResourcesButton.BackColor = System.Drawing.Color.Purple;
+            this.editResourcesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.editResourcesButton.FlatAppearance.BorderSize = 0;
+            this.editResourcesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editResourcesButton.Location = new System.Drawing.Point(0, 367);
+            this.editResourcesButton.Name = "editResourcesButton";
+            this.editResourcesButton.Size = new System.Drawing.Size(228, 61);
+            this.editResourcesButton.TabIndex = 6;
+            this.editResourcesButton.Text = "Edit Resources";
+            this.editResourcesButton.UseVisualStyleBackColor = false;
+            // 
+            // delResourcesButton
+            // 
+            this.delResourcesButton.BackColor = System.Drawing.Color.Cyan;
+            this.delResourcesButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.delResourcesButton.FlatAppearance.BorderSize = 0;
+            this.delResourcesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delResourcesButton.Location = new System.Drawing.Point(0, 428);
+            this.delResourcesButton.Name = "delResourcesButton";
+            this.delResourcesButton.Size = new System.Drawing.Size(228, 61);
+            this.delResourcesButton.TabIndex = 7;
+            this.delResourcesButton.Text = "Delete Resources";
+            this.delResourcesButton.UseVisualStyleBackColor = false;
+            this.delResourcesButton.Click += new System.EventHandler(this.delResourcesButton_Click);
             // 
             // Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 450);
+            this.ClientSize = new System.Drawing.Size(923, 489);
             this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -138,5 +203,9 @@
         private System.Windows.Forms.Button editUserButton;
         private System.Windows.Forms.Button addUserButton;
         private System.Windows.Forms.Button userButton;
+        private System.Windows.Forms.Button delResourcesButton;
+        private System.Windows.Forms.Button editResourcesButton;
+        private System.Windows.Forms.Button addResourcesButton;
+        private System.Windows.Forms.Button resourcesButton;
     }
 }

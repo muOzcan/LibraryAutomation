@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LibraryAutomationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Resources">
+          <Key>
+            <PropertyRef Name="resources_id" />
+          </Key>
+          <Property Name="resources_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="resources_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="resources_publisher" Type="nvarchar" MaxLength="50" />
+          <Property Name="resources_author" Type="nvarchar" MaxLength="50" />
+          <Property Name="resources_date" Type="datetime" />
+          <Property Name="resources_page" Type="int" />
+        </EntityType>
         <EntityType Name="Students">
           <Key>
             <PropertyRef Name="user_id" />
@@ -30,6 +41,7 @@
           <Property Name="personal_password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="LibraryAutomationModelStoreContainer">
+          <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -53,6 +65,7 @@
         <EntityContainer Name="LibraryAutomationEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="Students" EntityType="LibraryAutomationModel.Students" />
+          <EntitySet Name="Resources" EntityType="LibraryAutomationModel.Resources" />
         </EntityContainer>
         <EntityType Name="Students">
           <Key>
@@ -64,6 +77,17 @@
           <Property Name="user_tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="user_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="user_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Resources">
+          <Key>
+            <PropertyRef Name="resources_id" />
+          </Key>
+          <Property Name="resources_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="resources_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="resources_publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="resources_author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="resources_date" Type="DateTime" Precision="3" />
+          <Property Name="resources_page" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -94,6 +118,18 @@
                 <ScalarProperty Name="user_surname" ColumnName="user_surname" />
                 <ScalarProperty Name="user_name" ColumnName="user_name" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="LibraryAutomationModel.Resources">
+              <MappingFragment StoreEntitySet="Resources">
+                <ScalarProperty Name="resources_page" ColumnName="resources_page" />
+                <ScalarProperty Name="resources_date" ColumnName="resources_date" />
+                <ScalarProperty Name="resources_author" ColumnName="resources_author" />
+                <ScalarProperty Name="resources_publisher" ColumnName="resources_publisher" />
+                <ScalarProperty Name="resources_name" ColumnName="resources_name" />
+                <ScalarProperty Name="resources_id" ColumnName="resources_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

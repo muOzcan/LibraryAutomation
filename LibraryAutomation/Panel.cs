@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryAutomation.ResourceForms;
 
 namespace LibraryAutomation
 {
@@ -16,12 +17,17 @@ namespace LibraryAutomation
         {
             InitializeComponent();
         }
-
+        LibraryAutomationEntities db = new LibraryAutomationEntities();
         private void Panel_Load(object sender, EventArgs e)
         {
+            // Users Button
             addUserButton.Visible = false;
             editUserButton.Visible = false;
             deleteUserButton.Visible = false;
+            // Resources button
+            addResourcesButton.Visible = false;
+            editResourcesButton.Visible = false;
+            delResourcesButton.Visible = false;
         }
 
         private void userButton_Click(object sender, EventArgs e)
@@ -42,6 +48,7 @@ namespace LibraryAutomation
             UserList userListForm = new UserList();
             userListForm.MdiParent = this;
             userListForm.Show();
+            
         }
 
         private void addUserButton_Click(object sender, EventArgs e)
@@ -56,6 +63,48 @@ namespace LibraryAutomation
             UserDelete del = new UserDelete();
             del.MdiParent = this;
             del.Show();
+        }
+
+        private void editUserButton_Click(object sender, EventArgs e)
+        {
+            UserUpdate update = new UserUpdate();
+            update.MdiParent = this;
+            update.Show();
+        }
+
+        private void resourcesButton_Click(object sender, EventArgs e)
+        {
+            if (addResourcesButton.Visible == false)
+            {
+                addResourcesButton.Visible = true;
+                editResourcesButton.Visible = true;
+                delResourcesButton.Visible = true;
+            }
+            else
+            {
+                addResourcesButton.Visible = false;
+                editResourcesButton.Visible = false;
+                delResourcesButton.Visible = false;
+            }
+            
+            ResourceList rlis = new ResourceList();
+            rlis.MdiParent = this;
+            rlis.Show();
+        }
+
+        private void addResourcesButton_Click(object sender, EventArgs e)
+        {
+            ResourceAdd addresource = new ResourceAdd();
+            addresource.MdiParent = this;
+            addresource.Show();
+        }
+
+        private void delResourcesButton_Click(object sender, EventArgs e)
+        {
+            ResourceDelete delresource = new ResourceDelete();
+            delresource.MdiParent = this;
+            delresource.Show();
+
         }
     }
 }

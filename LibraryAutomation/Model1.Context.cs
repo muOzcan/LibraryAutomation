@@ -27,5 +27,6 @@ namespace LibraryAutomation
     
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Students> Students { get; set; }
+        public virtual DbSet<Resources> Resources { get; set; }
     }
 }
