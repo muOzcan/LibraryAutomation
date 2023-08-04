@@ -50,5 +50,12 @@ namespace LibraryAutomation
             add.MdiParent = this;
             add.Show();
         }
+
+        private void deleteUserButton_Click(object sender, EventArgs e)
+        {
+            UserDelete del = new UserDelete();
+            del.MdiParent = this;
+            del.Show();
+        }
     }
 }

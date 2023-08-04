@@ -62,6 +62,7 @@
             this.deleteUserButton.TabIndex = 3;
             this.deleteUserButton.Text = "Delete User";
             this.deleteUserButton.UseVisualStyleBackColor = false;
+            this.deleteUserButton.Click += new System.EventHandler(this.deleteUserButton_Click);
             // 
             // editUserButton
             // 
