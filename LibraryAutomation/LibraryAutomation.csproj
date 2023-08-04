@@ -165,6 +165,9 @@
     <EmbeddedResource Include="ResourceForms\ResourceList.resx">
       <DependentUpon>ResourceList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ResourceForms\ResourceUpdate.resx">
+      <DependentUpon>ResourceUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserAdd.resx">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </EmbeddedResource>

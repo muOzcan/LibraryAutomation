@@ -164,6 +164,7 @@
             this.editResourcesButton.TabIndex = 6;
             this.editResourcesButton.Text = "Edit Resources";
             this.editResourcesButton.UseVisualStyleBackColor = false;
+            this.editResourcesButton.Click += new System.EventHandler(this.editResourcesButton_Click);
             // 
             // delResourcesButton
             // 

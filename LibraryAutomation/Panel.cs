@@ -106,5 +106,12 @@ namespace LibraryAutomation
             delresource.Show();
 
         }
+
+        private void editResourcesButton_Click(object sender, EventArgs e)
+        {
+            ResourceUpdate update = new ResourceUpdate();
+            update.MdiParent = this;
+            update.Show();
+        }
     }
 }
