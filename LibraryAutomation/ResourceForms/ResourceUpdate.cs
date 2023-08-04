@@ -32,9 +32,6 @@ namespace LibraryAutomation.ResourceForms
             dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells[4].Value);
             numericUpDown1.Value = Convert.ToDecimal(dataGridView1.CurrentRow.Cells[5].Value);
 
-
-
-
         }
 
         private void addResourceButton_Click(object sender, EventArgs e)

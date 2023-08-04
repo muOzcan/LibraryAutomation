@@ -14,11 +14,20 @@ namespace LibraryAutomation
     
     public partial class Resources
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Resources()
+        {
+            this.Regist = new HashSet<Regist>();
+        }
+    
         public int resources_id { get; set; }
         public string resources_name { get; set; }
         public string resources_publisher { get; set; }
         public string resources_author { get; set; }
         public Nullable<System.DateTime> resources_date { get; set; }
         public Nullable<int> resources_page { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Regist> Regist { get; set; }
     }
 }

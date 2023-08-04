@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryAutomation.LendForms;
 using LibraryAutomation.ResourceForms;
 
 namespace LibraryAutomation
@@ -112,6 +113,13 @@ namespace LibraryAutomation
             ResourceUpdate update = new ResourceUpdate();
             update.MdiParent = this;
             update.Show();
+        }
+
+        private void lendResButton_Click(object sender, EventArgs e)
+        {
+            LendResources lend = new LendResources();
+            lend.MdiParent = this;
+            lend.Show();
         }
     }
 }

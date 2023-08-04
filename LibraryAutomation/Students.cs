@@ -14,11 +14,20 @@ namespace LibraryAutomation
     
     public partial class Students
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Students()
+        {
+            this.Regist = new HashSet<Regist>();
+        }
+    
         public int user_id { get; set; }
         public string user_name { get; set; }
         public string user_surname { get; set; }
         public string user_tc { get; set; }
         public string user_tel { get; set; }
         public string user_mail { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Regist> Regist { get; set; }
     }
 }

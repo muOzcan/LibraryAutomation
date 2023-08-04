@@ -38,6 +38,7 @@
             this.addResourcesButton = new System.Windows.Forms.Button();
             this.editResourcesButton = new System.Windows.Forms.Button();
             this.delResourcesButton = new System.Windows.Forms.Button();
+            this.lendResButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.lendResButton);
             this.panel1.Controls.Add(this.delResourcesButton);
             this.panel1.Controls.Add(this.editResourcesButton);
             this.panel1.Controls.Add(this.addResourcesButton);
@@ -56,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 489);
+            this.panel1.Size = new System.Drawing.Size(228, 619);
             this.panel1.TabIndex = 0;
             // 
             // deleteUserButton
@@ -180,11 +182,25 @@
             this.delResourcesButton.UseVisualStyleBackColor = false;
             this.delResourcesButton.Click += new System.EventHandler(this.delResourcesButton_Click);
             // 
+            // lendResButton
+            // 
+            this.lendResButton.BackColor = System.Drawing.Color.LightCoral;
+            this.lendResButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lendResButton.FlatAppearance.BorderSize = 0;
+            this.lendResButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lendResButton.Location = new System.Drawing.Point(0, 489);
+            this.lendResButton.Name = "lendResButton";
+            this.lendResButton.Size = new System.Drawing.Size(228, 61);
+            this.lendResButton.TabIndex = 8;
+            this.lendResButton.Text = "Lend Resources";
+            this.lendResButton.UseVisualStyleBackColor = false;
+            this.lendResButton.Click += new System.EventHandler(this.lendResButton_Click);
+            // 
             // Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 489);
+            this.ClientSize = new System.Drawing.Size(923, 619);
             this.Controls.Add(this.infoPanel);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -208,5 +224,6 @@
         private System.Windows.Forms.Button editResourcesButton;
         private System.Windows.Forms.Button addResourcesButton;
         private System.Windows.Forms.Button resourcesButton;
+        private System.Windows.Forms.Button lendResButton;
     }
 }

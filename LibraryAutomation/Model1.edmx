@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LibraryAutomationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Regist">
+          <Key>
+            <PropertyRef Name="regist_id" />
+          </Key>
+          <Property Name="regist_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="regist_name" Type="int" />
+          <Property Name="regist_book" Type="int" />
+          <Property Name="regist_givendate" Type="datetime" />
+          <Property Name="regist_returndate" Type="datetime" />
+          <Property Name="regist_state" Type="bit" />
+        </EntityType>
         <EntityType Name="Resources">
           <Key>
             <PropertyRef Name="resources_id" />
@@ -27,6 +38,16 @@
           <Property Name="user_tel" Type="nvarchar" MaxLength="11" />
           <Property Name="user_mail" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="personal_id" />
@@ -40,10 +61,44 @@
           <Property Name="personal_username" Type="nvarchar" MaxLength="50" />
           <Property Name="personal_password" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_Regist_Resources">
+          <End Role="Resources" Type="Self.Resources" Multiplicity="0..1" />
+          <End Role="Regist" Type="Self.Regist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resources">
+              <PropertyRef Name="resources_id" />
+            </Principal>
+            <Dependent Role="Regist">
+              <PropertyRef Name="regist_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Regist_Students">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+          <End Role="Regist" Type="Self.Regist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Regist">
+              <PropertyRef Name="regist_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="LibraryAutomationModelStoreContainer">
+          <EntitySet Name="Regist" EntityType="Self.Regist" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Regist_Resources" Association="Self.FK_Regist_Resources">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="Regist" EntitySet="Regist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regist_Students" Association="Self.FK_Regist_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Regist" EntitySet="Regist" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -66,6 +121,16 @@
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="Students" EntityType="LibraryAutomationModel.Students" />
           <EntitySet Name="Resources" EntityType="LibraryAutomationModel.Resources" />
+          <EntitySet Name="Regist" EntityType="LibraryAutomationModel.Regist" />
+          <EntitySet Name="sysdiagrams" EntityType="LibraryAutomationModel.sysdiagrams" />
+          <AssociationSet Name="FK_Regist_Resources" Association="LibraryAutomationModel.FK_Regist_Resources">
+            <End Role="Resources" EntitySet="Resources" />
+            <End Role="Regist" EntitySet="Regist" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Regist_Students" Association="LibraryAutomationModel.FK_Regist_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Regist" EntitySet="Regist" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Students">
           <Key>
@@ -77,6 +142,7 @@
           <Property Name="user_tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="user_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="user_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Regist" Relationship="LibraryAutomationModel.FK_Regist_Students" FromRole="Students" ToRole="Regist" />
         </EntityType>
         <EntityType Name="Resources">
           <Key>
@@ -88,7 +154,55 @@
           <Property Name="resources_author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="resources_date" Type="DateTime" Precision="3" />
           <Property Name="resources_page" Type="Int32" />
+          <NavigationProperty Name="Regist" Relationship="LibraryAutomationModel.FK_Regist_Resources" FromRole="Resources" ToRole="Regist" />
         </EntityType>
+        <EntityType Name="Regist">
+          <Key>
+            <PropertyRef Name="regist_id" />
+          </Key>
+          <Property Name="regist_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="regist_name" Type="Int32" />
+          <Property Name="regist_book" Type="Int32" />
+          <Property Name="regist_givendate" Type="DateTime" Precision="3" />
+          <Property Name="regist_returndate" Type="DateTime" Precision="3" />
+          <Property Name="regist_state" Type="Boolean" />
+          <NavigationProperty Name="Resources" Relationship="LibraryAutomationModel.FK_Regist_Resources" FromRole="Regist" ToRole="Resources" />
+          <NavigationProperty Name="Students" Relationship="LibraryAutomationModel.FK_Regist_Students" FromRole="Regist" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Regist_Resources">
+          <End Type="LibraryAutomationModel.Resources" Role="Resources" Multiplicity="0..1" />
+          <End Type="LibraryAutomationModel.Regist" Role="Regist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Resources">
+              <PropertyRef Name="resources_id" />
+            </Principal>
+            <Dependent Role="Regist">
+              <PropertyRef Name="regist_book" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Regist_Students">
+          <End Type="LibraryAutomationModel.Students" Role="Students" Multiplicity="0..1" />
+          <End Type="LibraryAutomationModel.Regist" Role="Regist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="Regist">
+              <PropertyRef Name="regist_name" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -130,6 +244,29 @@
                 <ScalarProperty Name="resources_publisher" ColumnName="resources_publisher" />
                 <ScalarProperty Name="resources_name" ColumnName="resources_name" />
                 <ScalarProperty Name="resources_id" ColumnName="resources_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regist">
+            <EntityTypeMapping TypeName="LibraryAutomationModel.Regist">
+              <MappingFragment StoreEntitySet="Regist">
+                <ScalarProperty Name="regist_state" ColumnName="regist_state" />
+                <ScalarProperty Name="regist_returndate" ColumnName="regist_returndate" />
+                <ScalarProperty Name="regist_givendate" ColumnName="regist_givendate" />
+                <ScalarProperty Name="regist_book" ColumnName="regist_book" />
+                <ScalarProperty Name="regist_name" ColumnName="regist_name" />
+                <ScalarProperty Name="regist_id" ColumnName="regist_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LibraryAutomationModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

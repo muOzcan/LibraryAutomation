@@ -8,6 +8,10 @@
         <EntityTypeShape EntityType="LibraryAutomationModel.Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LibraryAutomationModel.Students" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="LibraryAutomationModel.Resources" Width="1.5" PointX="5.875" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryAutomationModel.Regist" Width="1.5" PointX="8.5" PointY="0.75" />
+        <EntityTypeShape EntityType="LibraryAutomationModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.875" />
+        <AssociationConnector Association="LibraryAutomationModel.FK_Regist_Resources" />
+        <AssociationConnector Association="LibraryAutomationModel.FK_Regist_Students" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
