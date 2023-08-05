@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDelete));
             this.userDeleteButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -37,11 +38,13 @@
             // 
             this.userDeleteButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.userDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userDeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("userDeleteButton.Image")));
+            this.userDeleteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.userDeleteButton.Location = new System.Drawing.Point(40, 13);
             this.userDeleteButton.Name = "userDeleteButton";
-            this.userDeleteButton.Size = new System.Drawing.Size(123, 63);
+            this.userDeleteButton.Size = new System.Drawing.Size(132, 63);
             this.userDeleteButton.TabIndex = 0;
-            this.userDeleteButton.Text = "DELETE";
+            this.userDeleteButton.Text = "           DELETE";
             this.userDeleteButton.UseVisualStyleBackColor = false;
             this.userDeleteButton.Click += new System.EventHandler(this.userDeleteButton_Click);
             // 
@@ -57,6 +60,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(818, 525);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.userDeleteButton);

@@ -121,5 +121,12 @@ namespace LibraryAutomation
             lend.MdiParent = this;
             lend.Show();
         }
+
+        private void takeBackButton_Click(object sender, EventArgs e)
+        {
+            TakeBackResources take = new TakeBackResources();
+            take.MdiParent = this;
+            take.Show();
+        }
     }
 }

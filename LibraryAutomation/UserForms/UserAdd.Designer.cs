@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAdd));
             this.label1 = new System.Windows.Forms.Label();
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.addUserButton = new System.Windows.Forms.Button();
@@ -61,9 +62,11 @@
             // 
             // addUserButton
             // 
-            this.addUserButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.addUserButton.BackColor = System.Drawing.Color.ForestGreen;
             this.addUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.addUserButton.Image = ((System.Drawing.Image)(resources.GetObject("addUserButton.Image")));
+            this.addUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addUserButton.Location = new System.Drawing.Point(68, 296);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(184, 46);
@@ -148,6 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(928, 550);
             this.Controls.Add(this.mailTxt);
             this.Controls.Add(this.label5);

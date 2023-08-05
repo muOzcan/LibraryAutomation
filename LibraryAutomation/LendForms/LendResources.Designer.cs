@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LendResources));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.findButton = new System.Windows.Forms.Button();
@@ -61,12 +62,15 @@
             // findButton
             // 
             this.findButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.findButton.FlatAppearance.BorderSize = 0;
             this.findButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.findButton.Image = ((System.Drawing.Image)(resources.GetObject("findButton.Image")));
+            this.findButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.findButton.Location = new System.Drawing.Point(282, 12);
             this.findButton.Name = "findButton";
             this.findButton.Size = new System.Drawing.Size(101, 38);
             this.findButton.TabIndex = 2;
-            this.findButton.Text = "FIND";
+            this.findButton.Text = "         FIND";
             this.findButton.UseVisualStyleBackColor = false;
             this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
@@ -112,8 +116,11 @@
             // 
             // lendButton
             // 
-            this.lendButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lendButton.BackColor = System.Drawing.Color.DarkCyan;
+            this.lendButton.FlatAppearance.BorderSize = 0;
             this.lendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lendButton.Image = ((System.Drawing.Image)(resources.GetObject("lendButton.Image")));
+            this.lendButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lendButton.Location = new System.Drawing.Point(138, 133);
             this.lendButton.Name = "lendButton";
             this.lendButton.Size = new System.Drawing.Size(138, 78);
@@ -126,6 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(891, 559);
             this.Controls.Add(this.lendButton);
             this.Controls.Add(this.label2);

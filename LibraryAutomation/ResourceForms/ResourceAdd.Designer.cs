@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResourceAdd));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.addResourceButton = new System.Windows.Forms.Button();
@@ -63,12 +64,17 @@
             // 
             // addResourceButton
             // 
+            this.addResourceButton.BackColor = System.Drawing.Color.DarkCyan;
+            this.addResourceButton.FlatAppearance.BorderSize = 0;
+            this.addResourceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addResourceButton.Image = ((System.Drawing.Image)(resources.GetObject("addResourceButton.Image")));
+            this.addResourceButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addResourceButton.Location = new System.Drawing.Point(90, 313);
             this.addResourceButton.Name = "addResourceButton";
-            this.addResourceButton.Size = new System.Drawing.Size(200, 47);
+            this.addResourceButton.Size = new System.Drawing.Size(200, 53);
             this.addResourceButton.TabIndex = 2;
             this.addResourceButton.Text = "ADD";
-            this.addResourceButton.UseVisualStyleBackColor = true;
+            this.addResourceButton.UseVisualStyleBackColor = false;
             this.addResourceButton.Click += new System.EventHandler(this.addResourceButton_Click);
             // 
             // nameResTxt
@@ -146,6 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(85)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(923, 548);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

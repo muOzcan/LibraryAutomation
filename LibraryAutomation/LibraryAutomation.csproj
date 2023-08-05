@@ -67,6 +67,12 @@
     <Compile Include="LendForms\LendResources.Designer.cs">
       <DependentUpon>LendResources.cs</DependentUpon>
     </Compile>
+    <Compile Include="LendForms\TakeBackResources.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LendForms\TakeBackResources.Designer.cs">
+      <DependentUpon>TakeBackResources.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LendForms\LendResources.resx">
       <DependentUpon>LendResources.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LendForms\TakeBackResources.resx">
+      <DependentUpon>TakeBackResources.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel.resx">
       <DependentUpon>Panel.cs</DependentUpon>

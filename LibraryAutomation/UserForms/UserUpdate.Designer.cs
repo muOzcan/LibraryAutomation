@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserUpdate));
             this.mailTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.telTxt = new System.Windows.Forms.TextBox();
@@ -109,12 +110,15 @@
             // 
             // updateUserButton
             // 
-            this.updateUserButton.BackColor = System.Drawing.Color.LimeGreen;
+            this.updateUserButton.BackColor = System.Drawing.Color.ForestGreen;
+            this.updateUserButton.FlatAppearance.BorderSize = 0;
             this.updateUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateUserButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.updateUserButton.Image = ((System.Drawing.Image)(resources.GetObject("updateUserButton.Image")));
+            this.updateUserButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.updateUserButton.Location = new System.Drawing.Point(68, 271);
             this.updateUserButton.Name = "updateUserButton";
-            this.updateUserButton.Size = new System.Drawing.Size(184, 46);
+            this.updateUserButton.Size = new System.Drawing.Size(184, 52);
             this.updateUserButton.TabIndex = 14;
             this.updateUserButton.Text = "UPDATE";
             this.updateUserButton.UseVisualStyleBackColor = false;
@@ -149,6 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
             this.ClientSize = new System.Drawing.Size(898, 514);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.mailTxt);

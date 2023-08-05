@@ -34,16 +34,21 @@ namespace LibraryAutomation
 
             if (user == null)
             {
-                MessageBox.Show(text: "id sifre yanlis"); 
+                MessageBox.Show(text: "Incorrect username or password"); 
             }
             else
             {
-                MessageBox.Show(text: "Giris basarili");
+                //MessageBox.Show(text: "Giris basarili");
                 Panel panel = new Panel();
                 panel.Show();
                 this.Hide();
             }
-            
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
