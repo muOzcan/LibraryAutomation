@@ -35,11 +35,21 @@ namespace LibraryAutomation.ResourceForms
 
         private void delResButton_Click(object sender, EventArgs e)
         {
-            int clickId = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
-            var resource = db.Resources.Where(x => x.resources_id == clickId).FirstOrDefault();
-            db.Resources.Remove(resource);
-            db.SaveChanges();
-            List();
+            DialogResult delete = MessageBox.Show(text: "Are you sure you want to delete the resource?", "Delete action",
+                MessageBoxButtons.YesNo);
+
+            if (delete == DialogResult.Yes)
+            {
+                int clickId = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
+                var resource = db.Resources.Where(x => x.resources_id == clickId).FirstOrDefault();
+                db.Resources.Remove(resource);
+                db.SaveChanges();
+                List();
+            }
+            else
+            {
+
+            }
         }
 
         private void ResourceDelete_Load(object sender, EventArgs e)

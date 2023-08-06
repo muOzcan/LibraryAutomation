@@ -40,11 +40,22 @@ namespace LibraryAutomation
 
         private void userDeleteButton_Click(object sender, EventArgs e)
         {
-            int clickId = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
-            var user = db.Students.Where(x => x.user_id == clickId).FirstOrDefault();
-            db.Students.Remove(user);
-            db.SaveChanges();
-            List();
+            DialogResult delete = MessageBox.Show(text: "Are you sure you want to delete the user?", "Delete action",
+                MessageBoxButtons.YesNo);
+
+            if (delete == DialogResult.Yes)
+            {
+                int clickId = Convert.ToInt16(dataGridView1.CurrentRow.Cells[0].Value);
+                var user = db.Students.Where(x => x.user_id == clickId).FirstOrDefault();
+                db.Students.Remove(user);
+                db.SaveChanges();
+                List();
+            }
+            else
+            {
+                
+            }
+   
         }
     }
 }
