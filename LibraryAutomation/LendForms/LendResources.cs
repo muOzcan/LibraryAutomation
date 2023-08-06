@@ -20,21 +20,31 @@ namespace LibraryAutomation.LendForms
 
         private void LendResources_Load(object sender, EventArgs e)
         {
-            var registlist = db.Regist.ToList();
+            var registlist = from Regist in db.Regist
+                select new
+                {
+                    Regist.Students.user_name,
+                    Regist.Resources.resources_name,
+                    Regist.regist_givendate,
+                    Regist.regist_returndate,
+                    Regist.regist_state
+                };
+
+            //var registlist = db.Regist.ToList();
             dataGridView1.DataSource = registlist.ToList();
 
             var sourcelist = db.Resources.ToList();
             dataGridView2.DataSource = sourcelist.ToList();
 
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
+            //dataGridView1.Columns[6].Visible = false;
+            //dataGridView1.Columns[7].Visible = false;
 
-            dataGridView1.Columns[0].HeaderText = "Regist ID";
-            dataGridView1.Columns[1].HeaderText = "User Name";
-            dataGridView1.Columns[2].HeaderText = "Resource Name";
-            dataGridView1.Columns[3].HeaderText = "Given Date";
-            dataGridView1.Columns[4].HeaderText = "Return Date";
-            dataGridView1.Columns[5].HeaderText = "State";
+            //dataGridView1.Columns[0].HeaderText = "Regist ID";
+            dataGridView1.Columns[0].HeaderText = "User Name";
+            dataGridView1.Columns[1].HeaderText = "Resource Name";
+            dataGridView1.Columns[2].HeaderText = "Given Date";
+            dataGridView1.Columns[3].HeaderText = "Return Date";
+            dataGridView1.Columns[4].HeaderText = "State";
 
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[6].Visible = false;

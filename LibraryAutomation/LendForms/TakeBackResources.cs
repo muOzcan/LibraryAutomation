@@ -20,18 +20,31 @@ namespace LibraryAutomation.LendForms
 
         private void TakeBackResources_Load(object sender, EventArgs e)
         {
-            var regists = db.Regist.Where(x => x.regist_state == false).ToList();
-            dataGridView1.DataSource = regists.ToList();
+            var regists = db.Regist.Where(x => x.regist_state == false);
+            var registers = from Regist in db.Regist
+                select new
+                {
+                    Regist.Students.user_name,
+                    Regist.Resources.resources_name,
+                    Regist.regist_givendate,
+                    Regist.regist_returndate,
+                    Regist.regist_state,
+                };
 
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
 
-            dataGridView1.Columns[0].HeaderText = "Regist ID";
-            dataGridView1.Columns[1].HeaderText = "Register Name";
-            dataGridView1.Columns[2].HeaderText = "Registed Source";
-            dataGridView1.Columns[3].HeaderText = "Given Date";
-            dataGridView1.Columns[4].HeaderText = "Return Date";
-            dataGridView1.Columns[5].HeaderText = "State";
+           
+            dataGridView1.DataSource = registers.ToList();
+
+
+            //dataGridView1.Columns[6].Visible = false;
+            //dataGridView1.Columns[7].Visible = false;
+
+           
+            dataGridView1.Columns[0].HeaderText = "Register Name";
+            dataGridView1.Columns[1].HeaderText = "Registed Source";
+            dataGridView1.Columns[2].HeaderText = "Given Date";
+            dataGridView1.Columns[3].HeaderText = "Return Date";
+            dataGridView1.Columns[4].HeaderText = "State";
         }
 
         private void takeBackButton_Click(object sender, EventArgs e)

@@ -31,6 +31,7 @@ namespace LibraryAutomation
             delResourcesButton.Visible = false;
         }
 
+        private UserList userListForm;
         private void userButton_Click(object sender, EventArgs e)
         {
             if (addUserButton.Visible == false)
@@ -38,41 +39,79 @@ namespace LibraryAutomation
                 addUserButton.Visible = true;
                 editUserButton.Visible = true;
                 deleteUserButton.Visible = true;
+                userListForm = new UserList();
+                userListForm.MdiParent = this;
+                userListForm.Show();
             }
+
             else
             {
                 addUserButton.Visible = false;
                 editUserButton.Visible = false;
                 deleteUserButton.Visible = false;
+                userListForm.Close();
             }
-
-            UserList userListForm = new UserList();
-            userListForm.MdiParent = this;
-            userListForm.Show();
-
         }
 
+        private UserAdd add;
+        bool addState = false;
         private void addUserButton_Click(object sender, EventArgs e)
         {
-            UserAdd add = new UserAdd();
-            add.MdiParent = this;
-            add.Show();
+            if (addState == false)
+            {
+                add = new UserAdd();
+                add.MdiParent = this;
+                add.Show();
+                addState = true;
+
+            }
+            else
+            {
+                add.Close();
+                addState = false;
+            }
+
         }
 
+        private UserDelete del;
+        bool delState = false;
         private void deleteUserButton_Click(object sender, EventArgs e)
         {
-            UserDelete del = new UserDelete();
-            del.MdiParent = this;
-            del.Show();
+            if (delState == false)
+            {
+                del = new UserDelete();
+                del.MdiParent = this;
+                del.Show();
+                delState = true;
+            }
+            else
+            {
+                del.Close();
+                delState = false;
+            }
+
         }
 
+        private UserUpdate update;
+        bool updateState = false;
         private void editUserButton_Click(object sender, EventArgs e)
         {
-            UserUpdate update = new UserUpdate();
-            update.MdiParent = this;
-            update.Show();
+            if (updateState == false)
+            {
+                update = new UserUpdate();
+                update.MdiParent = this;
+                update.Show();
+                updateState = true;
+            }
+            else
+            {
+                update.Close();
+                updateState = false;
+            }
+
         }
 
+        private ResourceList rlis;
         private void resourcesButton_Click(object sender, EventArgs e)
         {
             if (addResourcesButton.Visible == false)
@@ -80,39 +119,78 @@ namespace LibraryAutomation
                 addResourcesButton.Visible = true;
                 editResourcesButton.Visible = true;
                 delResourcesButton.Visible = true;
+                rlis = new ResourceList();
+                rlis.MdiParent = this;
+                rlis.Show();
             }
             else
             {
                 addResourcesButton.Visible = false;
                 editResourcesButton.Visible = false;
                 delResourcesButton.Visible = false;
+                rlis.Close();
             }
-            
-            ResourceList rlis = new ResourceList();
-            rlis.MdiParent = this;
-            rlis.Show();
+
         }
 
+        private ResourceAdd addresource;
+        bool addresourcestate = false;
         private void addResourcesButton_Click(object sender, EventArgs e)
         {
-            ResourceAdd addresource = new ResourceAdd();
-            addresource.MdiParent = this;
-            addresource.Show();
+            if (addresourcestate == false)
+            {
+                addresource = new ResourceAdd();
+                addresource.MdiParent = this;
+                addresource.Show();
+                addresourcestate = true;
+
+            }
+            else
+            {
+                addresource.Close();
+                addresourcestate = false;
+            }
+
         }
 
+        private ResourceDelete delresource;
+        bool delresourcestate = false;
         private void delResourcesButton_Click(object sender, EventArgs e)
         {
-            ResourceDelete delresource = new ResourceDelete();
-            delresource.MdiParent = this;
-            delresource.Show();
+            if (delresourcestate == false)
+            {
+                delresource= new ResourceDelete();
+                delresource.MdiParent = this;
+                delresource.Show();
+                delresourcestate = true;
+
+            }
+            else
+            {
+                delresource.Close();
+                delresourcestate = false;
+            }
+             
 
         }
 
+        private ResourceUpdate resourceupdate;
+        bool updateresourcestate = false;
         private void editResourcesButton_Click(object sender, EventArgs e)
         {
-            ResourceUpdate update = new ResourceUpdate();
-            update.MdiParent = this;
-            update.Show();
+            if (updateresourcestate == false)
+            {
+                resourceupdate = new ResourceUpdate();
+                resourceupdate.MdiParent = this;
+                resourceupdate.Show();
+                updateresourcestate = true;
+            }
+            else
+            {
+                resourceupdate.Close();
+                updateresourcestate = false;
+            }
+             
         }
 
         private void lendResButton_Click(object sender, EventArgs e)
