@@ -25,6 +25,13 @@ namespace LibraryAutomation.LendForms
 
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
+
+            dataGridView1.Columns[0].HeaderText = "Regist ID";
+            dataGridView1.Columns[1].HeaderText = "Register Name";
+            dataGridView1.Columns[2].HeaderText = "Registed Source";
+            dataGridView1.Columns[3].HeaderText = "Given Date";
+            dataGridView1.Columns[4].HeaderText = "Return Date";
+            dataGridView1.Columns[5].HeaderText = "State";
         }
 
         private void takeBackButton_Click(object sender, EventArgs e)

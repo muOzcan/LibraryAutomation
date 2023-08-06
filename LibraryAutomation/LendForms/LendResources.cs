@@ -29,11 +29,21 @@ namespace LibraryAutomation.LendForms
             dataGridView1.Columns[6].Visible = false;
             dataGridView1.Columns[7].Visible = false;
 
-            dataGridView1.Columns[1].HeaderText = "User";
-            dataGridView1.Columns[2].HeaderText = "Book Name";
+            dataGridView1.Columns[0].HeaderText = "Regist ID";
+            dataGridView1.Columns[1].HeaderText = "User Name";
+            dataGridView1.Columns[2].HeaderText = "Resource Name";
             dataGridView1.Columns[3].HeaderText = "Given Date";
             dataGridView1.Columns[4].HeaderText = "Return Date";
             dataGridView1.Columns[5].HeaderText = "State";
+
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[6].Visible = false;
+
+            dataGridView2.Columns[1].HeaderText = "Resource Name";
+            dataGridView2.Columns[2].HeaderText = "Resource Publisher";
+            dataGridView2.Columns[3].HeaderText = "Resource Author";
+            dataGridView2.Columns[4].HeaderText = "Resource Date";
+            dataGridView2.Columns[5].HeaderText = "Resource Page";
 
         }
 

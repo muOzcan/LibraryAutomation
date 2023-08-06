@@ -22,6 +22,15 @@ namespace LibraryAutomation.ResourceForms
         {
             var resources = db.Resources.ToList();
             dataGridView1.DataSource = resources;
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[1].HeaderText = "Resource Name";
+            dataGridView1.Columns[2].HeaderText = "Resource Publisher";
+            dataGridView1.Columns[3].HeaderText = "Resource Author";
+            dataGridView1.Columns[4].HeaderText = "Resource Date";
+            dataGridView1.Columns[5].HeaderText = "Resource Page";
         }
 
         private void delResButton_Click(object sender, EventArgs e)

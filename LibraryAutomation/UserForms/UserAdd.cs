@@ -19,15 +19,25 @@ namespace LibraryAutomation
 
         private LibraryAutomationEntities db = new LibraryAutomationEntities();
 
-        private void UserAdd_Load(object sender, EventArgs e)
-        {
-            List();
-        }
+      
 
         public void List()
         {
             var users = db.Students.ToList();
             dataGridView1.DataSource = users;
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            dataGridView1.Columns[1].HeaderText = "User Name";
+            dataGridView1.Columns[2].HeaderText = "User Surname";
+            dataGridView1.Columns[3].HeaderText = "User Id";
+            dataGridView1.Columns[4].HeaderText = "User Tel";
+            dataGridView1.Columns[5].HeaderText = "User Mail";
+        }
+        private void UserAdd_Load(object sender, EventArgs e)
+        {
+            List();
         }
 
         private void addUserButton_Click(object sender, EventArgs e)
